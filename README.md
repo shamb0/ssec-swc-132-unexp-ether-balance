@@ -13,117 +13,159 @@
 
 ---
 
-## Example-1 :: TimeLock
+## Example-1 :: EtherGame
 
 **Howto Install & build**
 
 ```shell
 git clone https://github.com/shamb0/ssec-swc-132-unexp-ether-balance.git
-cd ssec-swc-101-int-ouflow
+cd ssec-swc-132-unexp-ether-balance
 yarn install
 yarn build
 ```
 
-### TimeLock ( Vulnarable One )
+### EtherGame ( Vulnarable One )
 
 ```shell
-master ●  env DEBUG="info*,error*,debug*" yarn run test ./test/TimeLock.spec.ts
+master$ env DEBUG="info*,debug*,error*" yarn run test ./test/EtherGame.spec.ts
 yarn run v1.22.4
-$ yarn run test:contracts ./test/TimeLock.spec.ts
-$ cross-env SOLPP_FLAGS="FLAG_IS_TEST,FLAG_IS_DEBUG" buidler test --show-stack-traces ./test/TimeLock.spec.ts
+$ yarn run test:contracts ./test/EtherGame.spec.ts
+$ cross-env SOLPP_FLAGS="FLAG_IS_TEST,FLAG_IS_DEBUG" buidler test --show-stack-traces ./test/EtherGame.spec.ts
 $(process.argv.length)
 All contracts have already been compiled, skipping compilation.
 
 
-  TimeLock Attack Test
-  info:TimeLock-Test Admin :: 0x17ec8597ff92C3F44523bDc65BF0f1bE632917ff +0ms
-  info:TimeLock-Test Own1 :: 0x63FC2aD3d021a4D7e64323529a55a9442C444dA0 +0ms
-  info:TimeLock-Test Own2 :: 0xD1D84F0e28D6fedF03c73151f98dF95139700aa7 +0ms
-  debug:TimeLock-Test Network Gas price @ 8000000000 +0ms
-  debug:TimeLock-Test TimeLock @ 0xA193E42526F1FEA8C99AF609dcEabf30C1c29fAA +53ms
-  debug:TimeLock-Test S1-Ent wallet bal :: 9.9979632 +4ms
-Info@TimeLock.sol::receive ContBal(2000000000000000000)
-  debug:TimeLock-Test timelockinst balance :: 2.0 +22ms
-  debug:TimeLock-Test S1-Ext wallet bal :: 7.997783024 +3ms
-  debug:TimeLock-Test S2-Ent wallet bal :: 7.997783024 +4ms
-Info@TimeLockAttack.sol::constructor ContBal(0)
-Info@TimeLockAttack.sol::receive ContBal(2000000000000000000)
-  debug:TimeLock-Test timelockattackinst balance :: 2.0 +74ms
-  debug:TimeLock-Test Attack @ 0xaC8444e7d45c34110B34Ed269AD86248884E78C7 +0ms
-  debug:TimeLock-Test S2-Ext wallet bal :: 5.993891928 +2ms
-  debug:TimeLock-Test S3-Ent :: 5.993891928 +4ms
-Info@TimeLockAttack.sol::pwnTimeLock Sender(0x17ec8597ff92c3f44523bdc65bf0f1be632917ff)
-Info@TimeLockAttack.sol::pwnTimeLock Val(1000000000000000000)
-Info@TimeLockAttack.sol::pwnTimeLock ContBal(3000000000000000000)
-Info@TimeLockAttack.sol::pwnTimeLock ContBal(2000000000000000000)
-Info@TimeLockAttack.sol::pwnTimeLock L1 timelock(1601704572)
-Info@TimeLockAttack.sol::pwnTimeLock L2 timelock(0)
-Info@TimeLockAttack.sol::receive ContBal(3000000000000000000)
-Info@TimeLockAttack.sol::pwnTimeLock ContBal(3000000000000000000)
-  debug:TimeLock-Test S3-Ext :: 5.993891928 +53ms
-    ✓ tst-item-001 (56ms)
-  debug:TimeLock-Test timelockinst balance :: 2.0 +3ms
-  debug:TimeLock-Test attackinst balance :: 2.0 +2ms
-  debug:TimeLock-Test S4-Ext wallet bal :: 5.993891928 +2ms
-  debug:TimeLock-Test timelockinst balance :: 0.0 +103ms
-  debug:TimeLock-Test attackinst balance :: 0.0 +2ms
-  debug:TimeLock-Test S5-Ext wallet bal :: 9.99343276 +2ms
+  EtherGame Attack Test
+  info:EtherGame-Test Admin :: 0x17ec8597ff92C3F44523bDc65BF0f1bE632917ff +0ms
+  info:EtherGame-Test Usr1 :: 0x63FC2aD3d021a4D7e64323529a55a9442C444dA0 +0ms
+  info:EtherGame-Test Usr2 :: 0xD1D84F0e28D6fedF03c73151f98dF95139700aa7 +1ms
+  info:EtherGame-Test Usr3 :: 0xd59ca627Af68D29C547B91066297a7c469a7bF72 +0ms
+  debug:EtherGame-Test Network Gas price @ 8000000000 +0ms
+  debug:EtherGame-Test EtherGame @ 0xA193E42526F1FEA8C99AF609dcEabf30C1c29fAA +64ms
+  debug:EtherGame-Test S1-Ent wallet bal :: 9.99603228 +4ms
+  debug:EtherGame-Test Ethergame balance :: 0.0 +3ms
+  debug:EtherGame-Test S1-Ext wallet bal :: 9.99603228 +4ms
+  debug:EtherGame-Test S2-Ent wallet bal :: 9.99603228 +3ms
+Info@EtherGameAttack.sol::receive ContBal(100000000000000000)
+  debug:EtherGame-Test EtherGameAttack balance :: 0.1 +47ms
+  debug:EtherGame-Test Attack @ 0xFDFEF9D10d929cB3905C71400ce6be1990EA0F34 +0ms
+  debug:EtherGame-Test S2-Ext wallet bal :: 9.894488128 +2ms
+  debug:EtherGame-Test play iter( 0 ) sindx( 2 ) +1ms
+  debug:EtherGame-Test S3-Ent :: 9.894488128 +2ms
+Info@EtherGame.sol::play sender(0xd1d84f0e28d6fedf03c73151f98df95139700aa7)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Cont Bal(500000000000000000)
+Info@EtherGame.sol::play curr bal (1000000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894488128 +40ms
+  debug:EtherGame-Test play iter( 1 ) sindx( 3 ) +0ms
+  debug:EtherGame-Test S3-Ent :: 9.894488128 +2ms
+Info@EtherGame.sol::play sender(0xd59ca627af68d29c547b91066297a7c469a7bf72)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Cont Bal(500000000000000000)
+Info@EtherGame.sol::play curr bal (1000000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894488128 +29ms
+  debug:EtherGame-Test play iter( 2 ) sindx( 2 ) +0ms
+  debug:EtherGame-Test S3-Ent :: 9.894488128 +2ms
+Info@EtherGame.sol::play sender(0xd1d84f0e28d6fedf03c73151f98df95139700aa7)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Cont Bal(500000000000000000)
+Info@EtherGame.sol::play curr bal (1000000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894488128 +25ms
+  debug:EtherGame-Test play iter( 3 ) sindx( 2 ) +0ms
+  debug:EtherGame-Test S3-Ent :: 9.894488128 +2ms
+Info@EtherGame.sol::play sender(0xd1d84f0e28d6fedf03c73151f98df95139700aa7)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Cont Bal(500000000000000000)
+Info@EtherGame.sol::play curr bal (1000000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894488128 +20ms
+    ✓ tst-item-001-Usr-play (122ms)
+  debug:EtherGame-Test EtherGame balance :: 0.0 +3ms
+  debug:EtherGame-Test EtherGameAttack balance :: 0.1 +2ms
+  debug:EtherGame-Test S4-Ext wallet bal :: 9.894488128 +2ms
+  debug:EtherGame-Test EtherGame balance :: 0.0 +65ms
+  debug:EtherGame-Test EtherGameAttack balance :: 0.0 +2ms
+  debug:EtherGame-Test S5-Ext wallet bal :: 9.994082032 +3ms
 
 
-  1 passing (874ms)
+  1 passing (532ms)
 
-Done in 14.92s.
+Done in 8.01s.
 ```
 
-#### eth flow in transaction
-
-![](./docs/seq-eth-flow-timelock/seq-eth-flow-timelock.png)
-
-### TimeLockFixed ( Fixed with OZ Safemath )
+### EtherGameFixed ( Fixed One )
 
 ```shell
-master ●  env DEBUG="info*,error*,debug*" yarn run test ./test/TimeLockFixed.spec.ts
+master$ env DEBUG="info*,debug*,error*" yarn run test ./test/EtherGameFixed.spec.ts
 yarn run v1.22.4
-$ yarn run test:contracts ./test/TimeLockFixed.spec.ts
-$ cross-env SOLPP_FLAGS="FLAG_IS_TEST,FLAG_IS_DEBUG" buidler test --show-stack-traces ./test/TimeLockFixed.spec.ts
+$ yarn run test:contracts ./test/EtherGameFixed.spec.ts
+$ cross-env SOLPP_FLAGS="FLAG_IS_TEST,FLAG_IS_DEBUG" buidler test --show-stack-traces ./test/EtherGameFixed.spec.ts
 $(process.argv.length)
 All contracts have already been compiled, skipping compilation.
 
 
-  TimeLock Attack Test
-  info:TimeLock-Test Admin :: 0x17ec8597ff92C3F44523bDc65BF0f1bE632917ff +0ms
-  info:TimeLock-Test Own1 :: 0x63FC2aD3d021a4D7e64323529a55a9442C444dA0 +0ms
-  info:TimeLock-Test Own2 :: 0xD1D84F0e28D6fedF03c73151f98dF95139700aa7 +0ms
-  debug:TimeLock-Test Network Gas price @ 8000000000 +0ms
-  debug:TimeLock-Test TimeLock @ 0xA193E42526F1FEA8C99AF609dcEabf30C1c29fAA +47ms
-  debug:TimeLock-Test Ent wallet bal :: 9.997716568 +3ms
-Info@TimeLock.sol::receive ContBal(2000000000000000000)
-  debug:TimeLock-Test timelockinst balance :: 2.0 +25ms
-  debug:TimeLock-Test Ext wallet bal :: 7.997536392 +3ms
-Info@TimeLockAttack.sol::constructor ContBal(0)
-Info@TimeLockAttack.sol::receive ContBal(2000000000000000000)
-  debug:TimeLock-Test timelockattackinst balance :: 2.0 +73ms
-  debug:TimeLock-Test Attack @ 0xaC8444e7d45c34110B34Ed269AD86248884E78C7 +0ms
-  debug:TimeLock-Test Enter :: 5.993645392 +3ms
-Info@TimeLockAttack.sol::pwnTimeLock Sender(0x17ec8597ff92c3f44523bdc65bf0f1be632917ff)
-Info@TimeLockAttack.sol::pwnTimeLock Val(1000000000000000000)
-Info@TimeLockAttack.sol::pwnTimeLock ContBal(3000000000000000000)
-Info@TimeLockAttack.sol::pwnTimeLock ContBal(2000000000000000000)
-Info@TimeLockAttack.sol::pwnTimeLock L1 timelock(1601704625)
-  error:TimeLock-Test Exception Err Error: VM Exception while processing transaction: revert SafeMath: addition overflow +0ms
-  info:TimeLock-Test Time Stamp after error :: 0 +230ms
-    ✓ tst-item-001 (58ms)
-  debug:TimeLock-Test timelockinst balance :: 2.0 +58ms
-  debug:TimeLock-Test attackinst balance :: 2.0 +2ms
-  debug:TimeLock-Test wallet bal :: 5.993645392 +2ms
-  debug:TimeLock-Test timelockinst balance :: 0.0 +101ms
-  debug:TimeLock-Test attackinst balance :: 0.0 +2ms
-  debug:TimeLock-Test wallet bal :: 9.993186224 +3ms
+  EtherGameFixed Attack Test
+  info:EtherGame-Test Admin :: 0x17ec8597ff92C3F44523bDc65BF0f1bE632917ff +0ms
+  info:EtherGame-Test Usr1 :: 0x63FC2aD3d021a4D7e64323529a55a9442C444dA0 +0ms
+  info:EtherGame-Test Usr2 :: 0xD1D84F0e28D6fedF03c73151f98dF95139700aa7 +0ms
+  info:EtherGame-Test Usr3 :: 0xd59ca627Af68D29C547B91066297a7c469a7bF72 +0ms
+  debug:EtherGame-Test Network Gas price @ 8000000000 +0ms
+  debug:EtherGame-Test EtherGameFixed @ 0xA193E42526F1FEA8C99AF609dcEabf30C1c29fAA +63ms
+  debug:EtherGame-Test S1-Ent wallet bal :: 9.995801008 +3ms
+  debug:EtherGame-Test Ethergame balance :: 0.0 +7ms
+  debug:EtherGame-Test S1-Ext wallet bal :: 9.995801008 +3ms
+  debug:EtherGame-Test S2-Ent wallet bal :: 9.995801008 +3ms
+Info@EtherGameAttack.sol::receive ContBal(100000000000000000)
+  debug:EtherGame-Test EtherGameAttack balance :: 0.1 +44ms
+  debug:EtherGame-Test Attack @ 0xFDFEF9D10d929cB3905C71400ce6be1990EA0F34 +0ms
+  debug:EtherGame-Test S2-Ext wallet bal :: 9.894256856 +2ms
+  debug:EtherGame-Test play iter( 0 ) sindx( 3 ) +1ms
+  debug:EtherGame-Test S3-Ent :: 9.894256856 +2ms
+Info@EtherGame.sol::play sender(0xd59ca627af68d29c547b91066297a7c469a7bf72)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Entry Curr Bal(0)
+Info@EtherGame.sol::play curr bal (500000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894256856 +43ms
+  debug:EtherGame-Test play iter( 1 ) sindx( 2 ) +0ms
+  debug:EtherGame-Test S3-Ent :: 9.894256856 +1ms
+Info@EtherGame.sol::play sender(0xd1d84f0e28d6fedf03c73151f98df95139700aa7)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Entry Curr Bal(0)
+Info@EtherGame.sol::play curr bal (500000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894256856 +29ms
+  debug:EtherGame-Test play iter( 2 ) sindx( 3 ) +0ms
+  debug:EtherGame-Test S3-Ent :: 9.894256856 +2ms
+Info@EtherGame.sol::play sender(0xd59ca627af68d29c547b91066297a7c469a7bf72)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Entry Curr Bal(0)
+Info@EtherGame.sol::play curr bal (500000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894256856 +24ms
+  debug:EtherGame-Test play iter( 3 ) sindx( 2 ) +0ms
+  debug:EtherGame-Test S3-Ent :: 9.894256856 +3ms
+Info@EtherGame.sol::play sender(0xd1d84f0e28d6fedf03c73151f98df95139700aa7)
+Info@EtherGame.sol::play value(500000000000000000)
+Info@EtherGame.sol::play Entry Curr Bal(0)
+Info@EtherGame.sol::play curr bal (500000000000000000)
+Info@EtherGame.sol::play user redeem value(0)
+  debug:EtherGame-Test S3-Ext :: 9.894256856 +23ms
+    ✓ tst-item-001-Usr-play (127ms)
+  debug:EtherGame-Test EtherGame balance :: 0.0 +3ms
+  debug:EtherGame-Test EtherGameAttack balance :: 0.1 +2ms
+  debug:EtherGame-Test S4-Ext wallet bal :: 9.894256856 +3ms
+  debug:EtherGame-Test EtherGame balance :: 0.0 +71ms
+  debug:EtherGame-Test EtherGameAttack balance :: 0.0 +2ms
+  debug:EtherGame-Test S5-Ext wallet bal :: 9.99385076 +2ms
 
 
-  1 passing (516ms)
+  1 passing (533ms)
 
-Done in 7.99s.
+Done in 8.09s.
 ```
 
 ---
