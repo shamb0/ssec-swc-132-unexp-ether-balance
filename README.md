@@ -8,7 +8,6 @@
 
 * [SWC-132 · Overview](https://swcregistry.io/docs/SWC-132)
 
-
 * [Gridlock (a smart contract bug). Edgeware’s Lockdrop smart contract has… | by Neil M | Medium](https://medium.com/@nmcl/gridlock-a-smart-contract-bug-73b8310608a9)
 
 ---
